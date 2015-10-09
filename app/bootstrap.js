@@ -6,7 +6,8 @@ define([
     'require',
     'angular',
     'app',
-    'routes'
+    'routes',
+    'sb-admin-2',
 ], function (require, ng) {
     'use strict';
 
@@ -16,6 +17,6 @@ define([
      */
 
     require(['domReady!'], function (document) {
-        ng.bootstrap(document, ['app']);
+        ng.bootstrap(document, ['myApp']);
     });
 });

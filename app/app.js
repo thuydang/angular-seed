@@ -1,3 +1,12 @@
+/**
+ * @ngdoc overview
+ * @name My sbAdminApp
+ * @description 
+ * # Network admin based on sbAdminApp
+ *
+ * Main module of the application.
+ */
+
 /*
 'use strict';
 
@@ -18,7 +27,12 @@ config(['$routeProvider', function($routeProvider) {
 // listed order (angular was introduced by shim in the require.config).
 define([
     'angular',
-    'angular-route',
+		'angular-loading-bar',
+    'angular-bootstrap', // ui.bootstrap module
+    'uiRouter',
+		'ocLazyLoad',
+		//'chart',
+    //'angular-route', --> disabled for the sake of ui-router
     //'./components/directives/index',
     //'./components/filters/index',
     //'./components/services/index',
@@ -27,11 +41,15 @@ define([
     'use strict';
 		// return angular module named 'app' in angular way. The dependency 
 		// list is in [].
-    return ng.module('app', [
+		return ng.module('myApp', [
+				'ui.router',
+				'ui.bootstrap',
+				'angular-loading-bar',
+				'oc.lazyLoad',
+				// 'ngRoute' --> disabled for the sake of ui-router
         //'app.services',
         //'app.filters',
         //'app.directives',
         'app.controllers',
-				'ngRoute'
     ]);
 });
