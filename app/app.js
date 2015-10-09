@@ -31,7 +31,7 @@ define([
     'angular-bootstrap', // ui.bootstrap module
     'uiRouter',
 		'ocLazyLoad',
-		//'chart',
+		'chart',
     //'angular-route', --> disabled for the sake of ui-router
     //'./components/directives/index',
     //'./components/filters/index',

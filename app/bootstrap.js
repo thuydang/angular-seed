@@ -7,7 +7,7 @@ define([
     'angular',
     'app',
     'routes',
-    'sb-admin-2',
+    //'sb-admin-2',
 ], function (require, ng) {
     'use strict';
 

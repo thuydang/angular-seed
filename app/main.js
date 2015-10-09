@@ -17,12 +17,12 @@ require.config({
 		'angular': './angular/angular',
 		'angular-route': './angular-route/angular-route',
 		'ocLazyLoad': './oclazyload/dist/ocLazyLoad.min',
-		//'chart': './Chart.js/Chart.min',
+		'chart': './Chart.js/Chart.min',
 		// not under baseUrl
+		'components': '../components', // dir
 		'app': '../app',
 		'routes': '../routes',
-		'components': '../components', // dir
-		'sb-admin-2': '../components/sb-admin-2', // dir
+		//'sb-admin-2': '../components/sb-admin-2',
 	},
 
 	// angular does not support AMD out of the box, put it in a shim
@@ -37,6 +37,9 @@ require.config({
 			deps: ['angular']
 		},
 		'angular-bootstrap': {
+			deps: ['angular']
+		},
+		'angular-loading-bar': {
 			deps: ['angular']
 		},
 		'ocLazyLoad': {
