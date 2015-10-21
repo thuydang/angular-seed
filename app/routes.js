@@ -102,7 +102,7 @@ define(['./app'], function (app) {
 						name:'chart.js',
 						files:[
 							'bower_components/angular-chart.js/dist/angular-chart.min.js',
-							'bower_components/angular-chart.js/dist/angular-chart.css'
+							'bower_components/angular-chart.js/dist/angular-chart.css',
 						]
 					}),
 					$ocLazyLoad.load({
@@ -148,7 +148,9 @@ define(['./app'], function (app) {
 						name:'topology_chart.js',
 						files:[
 							'bower_components/angular-chart.js/dist/angular-chart.min.js',
-							'bower_components/angular-chart.js/dist/angular-chart.css'
+							'bower_components/angular-chart.js/dist/angular-chart.css',
+							'bower_components/next-ui/js/next.js',
+							'bower_components/next-ui/css/next.css',
 						]
 					}).then(function success(args) {
 						  console.log('success');
@@ -158,12 +160,30 @@ define(['./app'], function (app) {
 							return err;
 					});
 				}],
-				loadTopologyModule: ['$ocLazyLoad', 'loadMyDirectives', function( $ocLazyLoad, loadMyDirectives ) {
+				loadNextUI:['$ocLazyLoad', function( $ocLazyLoad ) {
+					return $ocLazyLoad.load({
+						name:'nextUI',
+						files:[
+							'bower_components/next-ui/js/next.js',
+							'bower_components/next-ui/css/next.css',
+						]
+					}).then(function success(args) {
+						  console.log('success');
+							  return args;
+					}, function error(err) {
+						  console.log(err);
+							return err;
+					});
+				}],
+				loadTopologyModule: ['$ocLazyLoad', 'loadNextUI', function( $ocLazyLoad ) {
 					return $ocLazyLoad.load({
 						name:'myApp',
 						files:[
 							'components/controllers/topologyController.js',
 							'components/services/topologyRestconfService.js',
+							'components/next-modules/data.js',
+							'components/next-modules/topology.js',
+							'components/next-modules/shell.js',
 						]
 					});
 				}]

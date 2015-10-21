@@ -26,6 +26,7 @@ config(['$routeProvider', function($routeProvider) {
 // []. The parameters in function are reference to the requireJS modules in 
 // listed order (angular was introduced by shim in the require.config).
 define([
+    'jquery',
     'angular',
 		'angular-loading-bar',
     'angular-bootstrap', // ui.bootstrap module
@@ -37,7 +38,7 @@ define([
     //'./components/filters/index',
     //'./components/services/index',
     './components/controllers/index'
-], function (ng) {
+], function ($, ng) {
     'use strict';
 		// return angular module named 'app' in angular way. The dependency 
 		// list is in [].
