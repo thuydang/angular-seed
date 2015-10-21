@@ -15,7 +15,7 @@ define(['./app'], function (app) {
 				templateUrl: 'views/dashboard/main.html',
 				resolve: {
 					// load all libs used by this domain ( also in child pages)
-					loadMyDirectives:function($ocLazyLoad){
+					loadMyDirectives:['$ocLazyLoad', function($ocLazyLoad){
 						return $ocLazyLoad.load(
 								{
 									name:'myApp',
@@ -58,7 +58,7 @@ define(['./app'], function (app) {
 									name:'ngTouch',
 									files:['bower_components/angular-touch/angular-touch.js']
 								})
-					}
+					}]
 				}
 			})
 		.state('dashboard.home',{
@@ -116,8 +116,9 @@ define(['./app'], function (app) {
 			templateUrl:'views/topology.html',
 			url:'/topology',
 			controller:'TopologyCtrl',
+			/*
 			resolve: {
-				loadMyFile:function($ocLazyLoad) {
+				loadMyFile: function($ocLazyLoad) {
 					return $ocLazyLoad.load({
 						name:'chart.js',
 						files:[
@@ -140,20 +141,26 @@ define(['./app'], function (app) {
 					})
 				}
 			}
-			/*
+			*/
 			resolve: {
-				loadMyFile:function($ocLazyLoad) {
+				loadMyFile:['$ocLazyLoad', 'loadMyDirectives', function( $ocLazyLoad, loadMyDirectives ) {
 					return $ocLazyLoad.load({
 						name:'topology_chart.js',
 						files:[
 							'bower_components/angular-chart.js/dist/angular-chart.min.js',
 							'bower_components/angular-chart.js/dist/angular-chart.css'
 						]
+					}).then(function success(args) {
+						  console.log('success');
+							  return args;
+					}, function error(err) {
+						  console.log(err);
+							return err;
 					});
-				},
-				loadTopologyModule: ['$ocLazyLoad', 'ngResource', function( $ocLazyLoad, ngResource ) {
+				}],
+				loadTopologyModule: ['$ocLazyLoad', 'loadMyDirectives', function( $ocLazyLoad, loadMyDirectives ) {
 					return $ocLazyLoad.load({
-						name:'myApp_topology',
+						name:'myApp',
 						files:[
 							'components/controllers/topologyController.js',
 							'components/services/topologyRestconfService.js',
@@ -161,7 +168,6 @@ define(['./app'], function (app) {
 					});
 				}]
 			}
-			*/
 		})
 		.state('dashboard.table',{
 			templateUrl:'views/table.html',
