@@ -37,7 +37,7 @@ define([
     //'./components/directives/index',
     //'./components/filters/index',
     //'./components/services/index',
-    './components/controllers/index'
+    //'./components/controllers/index'
 ], function ($, ng) {
     'use strict';
 		// return angular module named 'app' in angular way. The dependency 
@@ -45,12 +45,12 @@ define([
 		return ng.module('myApp', [
 				'ui.router',
 				'ui.bootstrap',
-				'angular-loading-bar',
+				//'angular-loading-bar',
 				'oc.lazyLoad',
 				// 'ngRoute' --> disabled for the sake of ui-router
         //'app.services',
         //'app.filters',
         //'app.directives',
-        'app.controllers',
+        //'app.controllers',
     ]);
 });

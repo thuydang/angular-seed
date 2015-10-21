@@ -5,6 +5,7 @@
 define([
     'require',
     'angular',
+    'jquery',
     'app',
     'routes',
     //'sb-admin-2',

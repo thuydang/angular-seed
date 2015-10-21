@@ -11,11 +11,11 @@ require.config({
 		'jquery': './jquery/dist/jquery.min',
 		'metisMenu': './metisMenu/dist/metisMenu.min',
 		'domReady': './requirejs-domready/domReady',
-		'uiRouter': './angular-ui-router/release/angular-ui-router.min',
+		'uiRouter': './angular-ui-router/release/angular-ui-router',
 		'angular-bootstrap': './angular-bootstrap/ui-bootstrap-tpls.min',
 		'angular-loading-bar': './angular-loading-bar/build/loading-bar.min',
 		'angular': './angular/angular',
-		'angular-route': './angular-route/angular-route',
+		//'angular-route': './angular-route/angular-route',
 		'ocLazyLoad': './oclazyload/dist/ocLazyLoad.min',
 		'chart': './Chart.js/Chart.min',
 		// not under baseUrl
@@ -33,7 +33,12 @@ require.config({
 		'angular': {
 			exports: 'angular'
 		},
+		/*
 		'angular-route': {
+			deps: ['angular']
+		},
+		*/
+		'uiRouter': {
 			deps: ['angular']
 		},
 		'angular-bootstrap': {

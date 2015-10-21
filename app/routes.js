@@ -116,32 +116,6 @@ define(['./app'], function (app) {
 			templateUrl:'views/topology.html',
 			url:'/topology',
 			controller:'TopologyCtrl',
-			/*
-			resolve: {
-				loadMyFile: function($ocLazyLoad) {
-					return $ocLazyLoad.load({
-						name:'chart.js',
-						files:[
-							'bower_components/angular-chart.js/dist/angular-chart.min.js',
-							'bower_components/angular-chart.js/dist/angular-chart.css'
-						]
-					}),
-					$ocLazyLoad.load({
-						name:'myApp', // name of angular module (app) where controller, services are defined.
-						files:[
-							'components/controllers/topologyController.js',
-							'components/services/topologyRestconfService.js'
-						]
-					}).then(function success(args) {
-						  console.log('success');
-							  return args;
-					}, function error(err) {
-						  console.log(err);
-							return err;
-					})
-				}
-			}
-			*/
 			resolve: {
 				loadMyFile:['$ocLazyLoad', 'loadMyDirectives', function( $ocLazyLoad, loadMyDirectives ) {
 					return $ocLazyLoad.load({
@@ -179,8 +153,8 @@ define(['./app'], function (app) {
 					return $ocLazyLoad.load({
 						name:'myApp',
 						files:[
-							'components/controllers/topologyController.js',
 							'components/services/topologyRestconfService.js',
+							'components/controllers/topologyController.js',
 							'components/next-modules/data.js',
 							'components/next-modules/topology.js',
 							'components/next-modules/shell.js',
