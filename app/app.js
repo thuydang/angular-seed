@@ -33,12 +33,13 @@ define([
     'uiRouter',
 		'ocLazyLoad',
 		'chart',
+		'NeXt',
     //'angular-route', --> disabled for the sake of ui-router
     //'./components/directives/index',
     //'./components/filters/index',
     //'./components/services/index',
     //'./components/controllers/index'
-], function ($, ng) {
+], function ($ /*jquery*/, ng /*angular*/) {
     'use strict';
 		// return angular module named 'app' in angular way. The dependency 
 		// list is in [].

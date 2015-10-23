@@ -18,6 +18,7 @@ require.config({
 		//'angular-route': './angular-route/angular-route',
 		'ocLazyLoad': './oclazyload/dist/ocLazyLoad.min',
 		'chart': './Chart.js/Chart.min',
+		'NeXt': './next-ui/js/next', 
 		// not under baseUrl
 		'components': '../components', // dir
 		'app': '../app',
@@ -49,6 +50,9 @@ require.config({
 		},
 		'ocLazyLoad': {
 			deps: ['angular']
+		},
+		'NeXt': {
+			exports: 'nx'
 		},
 		// not export anything, just array of dependencies
 		metisMenu: [

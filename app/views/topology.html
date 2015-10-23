@@ -5,7 +5,7 @@
     <!-- /.col-lg-12 -->
 </div>
 <div class="row">
-	<div class="col-lg-6 col-sm-12" id="line-chart" ng-controller="TopologyCtrl">
+	<div class="col-lg-6 col-sm-12" id="line-chart" ng-controller="TopologyCtrl" ng-init="init()">
 		<div class="panel panel-default">
 			<div class="panel-heading">Line Chart</div>
 			<div class="panel-body">
@@ -14,7 +14,10 @@
 					click="line.onClick" series="line.series"></canvas>
 				{{topology}}
 				-->
-				<div id="next-app"></div>
+
+				<div class="nextcanvas" style="width: 100%; height: 100%;"  >
+					<div class="next-app" style="width: 100%; height: 100%;" ></div>
+				</div>
 			</div>
 		</div>
 	</div>

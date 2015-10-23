@@ -6,6 +6,7 @@ define([
     'require',
     'angular',
     'jquery',
+    'NeXt',
     'app',
     'routes',
     //'sb-admin-2',

@@ -8,7 +8,7 @@
 	// topology instance was made in TopologyContainer, but we can invoke its members through 'topology' variable for convenience
 	var topology = topologyContainer.topology();
 	//assign the app to the <div>
-	app.container(document.getElementById('next-app'));
+	app.container(document.getElementById('nextapp'));
 	// implementing an async http request
 	$.ajax({
 		//url: "http://172.16.39.132:8181/restconf/operational/network-topology:network-topology/topology/flow:1",
@@ -23,6 +23,7 @@
 			topologyData = odl2next(data);
 			// feed topology object with nodes and links...
 			topology.data(topologyData);
+			topology.adaptToContainer(); 
 			// ... then attach the topology to the app instance
 			topology.attach(app);
 		}

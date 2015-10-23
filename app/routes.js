@@ -157,7 +157,7 @@ define(['./app'], function (app) {
 							'components/controllers/topologyController.js',
 							'components/next-modules/data.js',
 							'components/next-modules/topology.js',
-							'components/next-modules/shell.js',
+							//'components/next-modules/shell.js',
 						]
 					});
 				}]
